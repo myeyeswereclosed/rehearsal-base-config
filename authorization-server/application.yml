@@ -10,7 +10,7 @@ eureka:
 spring:
   datasource:
     platform: postgres
-    url: jdbc:postgresql://${AUTHORIZATION_SERVER_DB_HOST:localhost}:${AUTHORIZATION_SERVER_DB_PORT:5432}/rehearsal_base_user
+    url: ${AUTHORIZATION_SERVER_DB_HOST:jdbc:postgresql://localhost}:${AUTHORIZATION_SERVER_DB_PORT:5432}/rehearsal_base_user
     username: postgres
     password: testpassword
     driverClassName: org.postgresql.Driver
