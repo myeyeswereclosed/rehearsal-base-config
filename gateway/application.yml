@@ -12,7 +12,7 @@ eureka:
 
 zuul:
 #  prefix: "/rb"
-  strip-prefix: true
+#  strip-prefix: true
   routes:
     rooms:
       serviceId: rehearsal-service
