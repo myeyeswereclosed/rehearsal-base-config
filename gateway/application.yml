@@ -10,6 +10,17 @@ eureka:
     serviceUrl:
       defaultZone: http://${SERVICE_DISCOVERY_HOST:localhost}:${SERVICE_DISCOVERY_PORT:8761}/eureka
 
+zuul:
+  prefix: "/rb"
+  strip-prefix: true
+  routes:
+    rooms:
+      serviceId: rehearsal-service
+      strip-prefix: false
+#    names:
+#      serviceId: names-microservice
+#      strip-prefix: false
+
 app:
   oauth2:
 #    token-uri: http://localhost:8090/auth-server/oauth/token
@@ -19,7 +30,7 @@ app:
 timetable:
   startHour: 9
   endHour: 24
-  periodInDays: 7 
+  periodInDays: 7
 logging:
   level:
     org:
