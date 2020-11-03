@@ -1,0 +1,27 @@
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /gateway
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${SERVICE_DISCOVERY_HOST:localhost}:${SERVICE_DISCOVERY_PORT:8761}/eureka
+
+app:
+  oauth2:
+#    token-uri: http://localhost:8090/auth-server/oauth/token
+    client-id: "any_id"
+    client-secret: "any_secret"
+    signing-key: 987654321
+timetable:
+  startHour: 9
+  endHour: 24
+  periodInDays: 7 
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
