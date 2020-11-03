@@ -11,7 +11,7 @@ eureka:
       defaultZone: http://${SERVICE_DISCOVERY_HOST:localhost}:${SERVICE_DISCOVERY_PORT:8761}/eureka
 
 zuul:
-  prefix: "/rb"
+#  prefix: "/rb"
   strip-prefix: true
   routes:
     rooms:
