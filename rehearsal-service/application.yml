@@ -1,0 +1,29 @@
+server:
+  port: ${PORT:8888}
+  servlet:
+    context-path: /rehearsal-service
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${SERVICE_DISCOVERY_HOST:localhost}:${SERVICE_DISCOVERY_PORT:8761}/eureka
+
+spring:
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/rehearsal_base
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:testpassword}
+    driverClassName: org.postgresql.Driver
+    initialization-mode: always
+  jpa:
+    show-sql: ${SHOW_SQL:true}
+rehearsal:
+  canBeCancelledBefore: ${CANCELLATION_TIME:24} #hours
+logging:
+  level:
+    org:
+      springframework:
+        web: ${LOG_LEVEL:DEBUG}
