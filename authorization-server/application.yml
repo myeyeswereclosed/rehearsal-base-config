@@ -23,8 +23,8 @@ spring:
 
 app:
   oauth2:
-    client-id: ${CLIENT_ID:"any_id"}
-    client-secret: ${CLIENT_SECRET:"any_secret"}
+    client-id: ${CLIENT_ID:any_id}
+    client-secret: ${CLIENT_SECRET:any_secret}
     signing-key: ${SIGN_KEY:987654321}
 
 logging:
