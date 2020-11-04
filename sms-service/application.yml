@@ -21,6 +21,15 @@ spring:
   jpa:
     show-sql: ${SHOW_SQL:true}
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics, health
+  endpoint:
+    health:
+      show-details: always
+
 sms-code:
   expirationTimeInSeconds: ${SMS_CODE_EXPIRATION_TIME_IN_SECONDS:90}
   waitingInterval: ${WAITING_INTERVAL_IN_SECONDS:60} #seconds

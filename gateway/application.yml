@@ -25,6 +25,15 @@ zuul:
       strip-prefix: true
       url: http://${SMS_SERVICE_HOST:localhost}:${SMS_SERVICE_PORT:8085}/sms-service
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics, health
+  endpoint:
+    health:
+      show-details: always
+
 app:
   oauth2:
     client-id: ${CLIENT_ID:any_id}

@@ -20,8 +20,19 @@ spring:
     initialization-mode: always
   jpa:
     show-sql: ${SHOW_SQL:true}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics, health
+  endpoint:
+    health:
+      show-details: always
+
 rehearsal:
   canBeCancelledBefore: ${CANCELLATION_TIME:24} #hours
+
 logging:
   level:
     org:

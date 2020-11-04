@@ -21,6 +21,15 @@ spring:
   jpa:
     show-sql: ${SHOW_SQL:true}
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics, health
+  endpoint:
+    health:
+      show-details: always
+
 app:
   oauth2:
     client-id: ${CLIENT_ID:any_id}
