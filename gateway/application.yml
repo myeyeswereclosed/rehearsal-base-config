@@ -25,6 +25,16 @@ zuul:
       strip-prefix: true
       url: http://${SMS_SERVICE_HOST:localhost}:${SMS_SERVICE_PORT:8085}/sms-service
 
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+  hystrix:
+    enabled: true
+
 management:
   endpoints:
     web:
