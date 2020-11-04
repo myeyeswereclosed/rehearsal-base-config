@@ -36,6 +36,8 @@ feign:
     enabled: true
     command:
       default:
+        connectTimeout: 5000
+        readTimeout: 5000
         execution:
           isolation:
             thread:
@@ -45,7 +47,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: metrics, health
+        include: metrics, health, hystrix.stream
   endpoint:
     health:
       show-details: always
