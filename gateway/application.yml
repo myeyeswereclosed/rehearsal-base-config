@@ -28,17 +28,24 @@ zuul:
 feign:
   hystrix:
     enabled: true
-    
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+
 hystrix:
-  enabled: true
   command:
     default:
-      connectTimeout: 5000
-      readTimeout: 5000
       execution:
         isolation:
           thread:
             timeoutInMilliseconds: 5000
+
+ribbon:
+  connectTimeout: 7500
+  readTimeout: 7500
 
 management:
   endpoints:
