@@ -45,7 +45,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: metrics, health, hystrix.stream
+        include: metrics, health
   endpoint:
     health:
       show-details: always
