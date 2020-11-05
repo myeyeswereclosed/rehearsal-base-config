@@ -26,7 +26,7 @@ zuul:
       url: http://${SMS_SERVICE_HOST:localhost}:${SMS_SERVICE_PORT:8085}/sms-service
     user:
       path: /user/**
-      url: http://${AUTH_SERVER_HOST:localhost}:${AUTH_SERVER_PORT:8090}/auth-server
+      url: http://${AUTH_SERVER_HOST:localhost}:${AUTH_SERVER_PORT:8090}/auth-server/user
 
 feign:
   hystrix:
