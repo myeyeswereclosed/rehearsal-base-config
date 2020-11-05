@@ -20,9 +20,6 @@ spring:
     initialization-mode: always
   jpa:
     show-sql: ${SHOW_SQL:true}
-  sleuth:
-    sampler:
-      probability: 100
   zipkin:
     baseUrl: http://${ZIPKIN_HOST:localhost}:${ZIPKIN_PORT:9411}
 
